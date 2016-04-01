@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="template" client="site" method="upgrade">
+	<name>coopcetor</name>
+	<version>beta</version>
+	<creationDate>March, 31th 2016</creationDate>
+	<author>Alexon Balangue</author>
+	<authorUrl>www.alexonbalangue.me</authorUrl>
+	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
+	<copyright>Copyright (C) 2016 Alexon Balangue. All rights reserved.</copyright>
+	<description>TPL_COOPCEPTOR_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>assets</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>banner</position>
+		<position>debug</position>
+		<position>footer</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="logoFile" class="" type="media" default=""
+					label="TPL_COOPCEPTOR_LOGO_LABEL"
+					description="TPL_COOPCEPTOR_LOGO_DESC" />
+
+
+				<field name="groups-html"
+					type="list"
+					default="boostrap"
+					label="TPL_COOPCEPTOR_FONT_LABEL"
+					description="TPL_COOPCEPTOR_FONT_DESC"
+				>
+					<option value="boostrap">Boostrap</option>
+					<option value="amp">AMP</option>
+					<option value="foundation">Foundation</option>
+					<option value="metroui">MetroUI</option>
+				</field>
+				<field name="groups-method"
+					type="list"
+					default="custom"
+					label="TPL_COOPCEPTOR_FONT_LABEL"
+					description="TPL_COOPCEPTOR_FONT_DESC"
+				>
+					<option value="base">base</option>
+					<option value="default">default</option>
+					<option value="developpment">developpmen</option>
+					<option value="custom">custom</option>
+				</field>
+				<field name="googleFontName" type="text" default="Open+Sans"
+					label="TPL_COOPCEPTOR_FONT_NAME_LABEL"
+					description="TPL_COOPCEPTOR_FONT_NAME_DESC" />
+
+			</fieldset>
+			<fieldset name="Boostrap">
+				<field name="fluidContainer"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="TPL_COOPCEPTOR_FLUID_LABEL"
+					description="TPL_COOPCEPTOR_FLUID_DESC"
+				>
+					<option value="1">TPL_COOPCEPTOR_FLUID</option>
+					<option value="0">TPL_COOPCEPTOR_STATIC</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
