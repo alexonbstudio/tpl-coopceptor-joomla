@@ -38,45 +38,37 @@
 				<field name="logoFile" class="" type="media" default=""
 					label="TPL_COOPCEPTOR_LOGO_LABEL"
 					description="TPL_COOPCEPTOR_LOGO_DESC" />
-
-
 				<field name="groups-html"
 					type="list"
 					default="boostrap"
 					label="TPL_COOPCEPTOR_FONT_LABEL"
-					description="TPL_COOPCEPTOR_FONT_DESC"
-				>
-					<option value="boostrap">Boostrap</option>
-					<option value="amp">AMP</option>
-					<option value="foundation">Foundation</option>
-					<option value="metroui">MetroUI</option>
+					description="TPL_COOPCEPTOR_FONT_DESC">
+						<option value="boostrap2">Boostrap V2.3.2</option>
+						<option value="boostrap3">Boostrap V3.3.6</option>
+						<option value="amp">AMP</option>
+						<option value="foundation">Foundation</option>
+						<option value="metroui">MetroUI</option>
 				</field>
 				<field name="groups-method"
 					type="list"
 					default="custom"
 					label="TPL_COOPCEPTOR_FONT_LABEL"
-					description="TPL_COOPCEPTOR_FONT_DESC"
-				>
-					<option value="base">base</option>
-					<option value="default">default</option>
-					<option value="developpment">developpmen</option>
-					<option value="custom">custom</option>
+					description="TPL_COOPCEPTOR_FONT_DESC">
+						<option value="base">base</option>
+						<option value="default">default</option>
+						<option value="developpment">developpmen</option>
+						<option value="custom">custom</option>
 				</field>
-				<field name="googleFontName" type="text" default="Open+Sans"
-					label="TPL_COOPCEPTOR_FONT_NAME_LABEL"
-					description="TPL_COOPCEPTOR_FONT_NAME_DESC" />
-
 			</fieldset>
-			<fieldset name="Boostrap">
-				<field name="fluidContainer"
+			<fieldset name="AMP-HTML views">
+				<field name="ampHTML"
 					type="radio"
 					class="btn-group btn-group-yesno"
 					default="0"
-					label="TPL_COOPCEPTOR_FLUID_LABEL"
-					description="TPL_COOPCEPTOR_FLUID_DESC"
-				>
-					<option value="1">TPL_COOPCEPTOR_FLUID</option>
-					<option value="0">TPL_COOPCEPTOR_STATIC</option>
+					label="AMP-HTML"
+					description="TPL_COOPCEPTOR_AMP_DESC">
+						<option value="1">JYes</option>
+						<option value="0">JNo</option>
 				</field>
 			</fieldset>
 		</fields>
