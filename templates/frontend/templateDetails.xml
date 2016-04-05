@@ -41,7 +41,7 @@
 					description="TPL_COOPCEPTOR_LOGO_DESC" />
 				<field name="groups-html"
 					type="list"
-					default="boostrap"
+					default="boostrap2"
 					label="TPL_COOPCEPTOR_FONT_LABEL"
 					description="TPL_COOPCEPTOR_FONT_DESC">
 						<option value="boostrap2">Boostrap V2.3.2</option>
