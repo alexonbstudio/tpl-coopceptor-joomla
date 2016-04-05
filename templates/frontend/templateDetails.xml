@@ -23,8 +23,9 @@
 	</files>
 	<positions>
 		<position>banner</position>
-		<position>debug</position>
 		<position>footer</position>
+		<position>referencer</position>
+		<position>debug</position>
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.ini</language>

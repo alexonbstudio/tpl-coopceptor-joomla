@@ -196,7 +196,7 @@ $docs->addStyleSheet($this->baseurl.'/templates/'.$this->template.'/assets/'.$th
 	<?php break; endswitch; ?>
 		<?php /**********************************	OTHERS	*********************************************/ ?>
 		<?php if ($params->get('ampHTML') == '1'): ?>[cookies legal="<?php echo JText::_('TPL_COOPCEPTOR_COOKIESEU_HOME'); ?>" botton="Ok" url="#" /]<?php endif; ?>
-		<?php if ($this->countModules('cvstart_reference')) : ?><jdoc:include type="modules" name="cvstart_reference" style="none" /><?php endif; ?>	
+		<?php if ($this->countModules('referencer')) : ?><jdoc:include type="modules" name="referencer" style="none" /><?php endif; ?>	
 		<jdoc:include type="modules" name="debug" style="none" />	
 
 	[ends tags="body" /]  

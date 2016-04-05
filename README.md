@@ -9,10 +9,35 @@ Autorisate and maintener this template the author by Alexon Balangue:
 -totaly free
 
 
+Next extention "component" will supported - backend:
+-
+-
+-
+-
+-
+
+Next extention "module" will supported - backend:
+-
+-
+-
+-
+-
 
 
 
+Next extention "component" will supported - frontend:
+-
+-
+-
+-
+-
 
+Next extention "module" will supported - frontend:
+-
+-
+-
+-
+-
 
 Why?
 Some people not likes Boostrap prefere, what he want to choose favorite framework HTML, so that create a one-off complet template and renovate use on Joomla.
