@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.5" type="template" client="site" method="upgrade">
 	<name>coopcetor</name>
-	<version>beta</version>
-	<creationDate>March, 31th 2016</creationDate>
+	<version>1.0</version>
+	<creationDate>April, 5th 2016</creationDate>
 	<author>Alexon Balangue</author>
 	<authorUrl>www.alexonbalangue.me</authorUrl>
 	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
@@ -36,14 +36,24 @@
 	<config>
 		<fields name="params">
 			<fieldset name="advanced">
+				<field name="Pages-js-default"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default=""
+					label="TPL_COOPCEPTOR_HIDEJSDEFAULT_LABEL"
+					description="TPL_COOPCEPTOR_HIDEJSDEFAULT_DESC">
+						<option value="">Keep default</option>
+						<option value="home">home</option>
+						<option value="component">Component</option>
+				</field>
 				<field name="logoFile" class="" type="media" default=""
 					label="TPL_COOPCEPTOR_LOGO_LABEL"
-					description="TPL_COOPCEPTOR_LOGO_DESC" />
+					description="TPL_COOPCEPTOR_LOGO_LABEL" />
 				<field name="groups-html"
 					type="list"
 					default="boostrap2"
-					label="TPL_COOPCEPTOR_FONT_LABEL"
-					description="TPL_COOPCEPTOR_FONT_DESC">
+					label="TPL_COOPCEPTOR_METHODHTML_LABEL"
+					description="TPL_COOPCEPTOR_METHODHTML_DESC">
 						<option value="boostrap2">Boostrap V2.3.2</option>
 						<option value="boostrap3">Boostrap V3.3.6</option>
 						<option value="amp">AMP</option>
@@ -52,26 +62,42 @@
 				</field>
 				<field name="groups-method"
 					type="list"
-					default="custom"
-					label="TPL_COOPCEPTOR_FONT_LABEL"
-					description="TPL_COOPCEPTOR_FONT_DESC">
-						<option value="base">base</option>
-						<option value="default">default</option>
-						<option value="developpment">developpmen</option>
-						<option value="custom">custom</option>
+					default="base"
+					label="TPL_COOPCEPTOR_METHODDESIGNER_LABEL"
+					description="TPL_COOPCEPTOR_METHODDESIGNER_DESC">
+						<option value="base">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_BASE</option>
+						<option value="default">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEFAULT</option>
+						<option value="developpment">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEV</option>
+						<option value="custom">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_CUSTOM</option>
+						<option value="production">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_PROD</option>
 				</field>
 			</fieldset>
-			<fieldset name="AMP-HTML views">
+			<fieldset name="AMP-HTMLviews" label="AMP-HTML views">
 				<field name="ampHTML"
 					type="radio"
 					class="btn-group btn-group-yesno"
-					default="0"
+					default=""
 					label="AMP-HTML"
-					description="TPL_COOPCEPTOR_AMP_DESC">
+					description="TPL_COOPCEPTOR_AMPHTML_DESC">
+						<option value="amp">JYes</option>
+						<option value="">JNo</option>
+				</field>
+			</fieldset>
+			<fieldset name="Hidding" label="Hidding support">
+				<field name="ampHTMLbeta"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="not yet"
+					description="TPL_COOPCEPTOR_XXXX_DESC">
 						<option value="1">JYes</option>
 						<option value="0">JNo</option>
 				</field>
 			</fieldset>
 		</fields>
 	</config>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=all&amp;format=xml</server>
+		<server type="extension" priority="2" name="template - Coopceptor">http://alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=11</server>
+	</updateservers>
 </extension>
