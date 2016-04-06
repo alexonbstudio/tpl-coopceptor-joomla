@@ -129,7 +129,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="col-lg-12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
-						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
@@ -170,7 +170,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="col-lg-12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
-						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
@@ -211,7 +211,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="col-lg-12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
-						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
@@ -230,7 +230,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="col-lg-12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
-						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
@@ -270,7 +270,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="col-lg-12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
-						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  

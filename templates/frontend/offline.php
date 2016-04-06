@@ -41,7 +41,7 @@ $twofactormethods = UsersHelper::getTwoFactorMethods();
 [/head]
 [begins tags="body" mdatatype="http://schema.org/WebPage" /]
 <jdoc:include type="message" />
-    <header>
+    [header]
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -63,41 +63,40 @@ $twofactormethods = UsersHelper::getTwoFactorMethods();
                 </div>
             </div>
         </div>
-    </header>
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
+    [/header]
+    [section]
+        [begins tags="div" class="container" /]  
+            [begins tags="div" class="row" /]  
+                [begins tags="div" class="col-lg-12 text-center" /]  
                     <h2 itemprop="alternativeHealine">Sorry, Member team login only</h2>
-                    <hr>
-                    <div class="row text-center">
-						<form action="<?php echo JRoute::_('index.php', true); ?>" class="form-inline" method="post" id="form-login">
-
-							<div class="form-group">
-								<label for="username"><?php echo JText::_('JGLOBAL_USERNAME'); ?></label>
+                    [hr /]
+                    [begins tags="div" class="row text-center" /]  
+						[begins tags='form' class='form-inline' id='form-login' more='action="<?php echo JRoute::_('index.php', true); ?>" method="post"' /]  
+							[begins tags="div" class="form-group" /]  
+								[begins tags='label' more='for="username"' /]<?php echo JText::_('JGLOBAL_USERNAME'); ?>[ends tags="label" /]
 								<input name="username" id="username" type="text" class="form-control" placeholder="<?php echo JText::_('JGLOBAL_USERNAME'); ?>" />
-							</div>
-							<div class="form-group">
-								<label for="passwd"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
+							[ends tags="div" /]  
+							[begins tags="div" class="form-group" /] 
+								[begins tags='label' more='for="passwd"' /]<?php echo JText::_('JGLOBAL_PASSWORD'); ?>[ends tags="label" /]
 								<input type="password" name="password" class="form-control" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD'); ?>" id="passwd" />
-							</div>
+							[ends tags="div" /]  
 							<?php if (count($twofactormethods) > 1) : ?>
-								<div class="form-group">
-									<label for="secretkey"><?php echo JText::_('JGLOBAL_SECRETKEY'); ?></label>
+								[begins tags="div" class="form-group" /] 
+									[begins tags='label' more='for="secretkey"' /]<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>[ends tags="label" /]
 									<input type="text" name="secretkey" class="form-control" placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY'); ?>" id="secretkey" />
-								</div>
+								[ends tags="div" /]  
 							<?php endif; ?>
-								<input type="submit" name="Submit" class="btn btn-dark" value="<?php echo JText::_('JLOGIN'); ?>" />
+							<input type="submit" name="Submit" class="btn btn-dark" value="<?php echo JText::_('JLOGIN'); ?>" />
 							<input type="hidden" name="option" value="com_users" />
 							<input type="hidden" name="task" value="user.login" />
 							<input type="hidden" name="return" value="<?php echo base64_encode(JUri::base()); ?>" />
 							<?php echo JHtml::_('form.token'); ?>
-						</form>
-					</div>
-                </div>
-            </div>
-        </div>
-    </section>
+						[ends tags="form" /]
+					[ends tags="div" /]  
+                [ends tags="div" /]  
+            [ends tags="div" /]  
+        [ends tags="div" /]  
+    [/section]
     [footer]
 		[begins tags="div" class="container" /]  
 			[begins tags="div" class="row" /]  
