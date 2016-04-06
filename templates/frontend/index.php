@@ -117,18 +117,22 @@ $Params_grpsJs = $this->params->get('groups-method');
 	[head]<jdoc:include type="head" />[/head]
 	<?php switch($Grps_html): case 'boostrap2': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
-		<?php /**********************************	header	*********************************************/ ?>
 		[header]
 			<?php echo $logo; ?>
 		[/header]
-		<?php /**********************************	BODY	*********************************************/ ?>
 		[section]
 			<jdoc:include type="message" />
-			<jdoc:include type="component" />		
+			<jdoc:include type="component" />	
 		[/section]
-		<?php /**********************************	FOOTER	*********************************************/ ?>
 		[footer]
-			
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
 		[/footer]
 		<?php
 			switch($Params_grpsJs):
@@ -154,18 +158,22 @@ $Params_grpsJs = $this->params->get('groups-method');
 		[script src="<?php echo $this->baseurl.'/templates/'.$this->template; ?>/assets/<?php echo $this->params->get('groups-method'); ?>/js/application.js" /]  
 	<?php break; case 'boostrap3': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
-		<?php /**********************************	header	*********************************************/ ?>
 		[header]
 			<?php echo $logo; ?>
 		[/header]
-		<?php /**********************************	BODY	*********************************************/ ?>
 		[section]
 			<jdoc:include type="message" />
 			<jdoc:include type="component" />	
 		[/section]
-		<?php /**********************************	FOOTER	*********************************************/ ?>
 		[footer]
-		
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
 		[/footer]
 		<?php
 			switch($Params_grpsJs):
@@ -191,33 +199,41 @@ $Params_grpsJs = $this->params->get('groups-method');
 		[script src="<?php echo $this->baseurl.'/templates/'.$this->template; ?>/assets/<?php echo $this->params->get('groups-method'); ?>/js/application.js" /]
 	<?php break; case 'amp': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
-		<?php /**********************************	header	*********************************************/ ?>
 		[header]
 			<?php echo $logo; ?>
 		[/header]
-		<?php /**********************************	BODY	*********************************************/ ?>
 		[section]
 			<jdoc:include type="message" />
 			<jdoc:include type="component" />	
 		[/section]
-		<?php /**********************************	FOOTER	*********************************************/ ?>
 		[footer]
-		
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
 		[/footer]
 	<?php break; case 'foundation': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
-		<?php /**********************************	header	*********************************************/ ?>
 		[header]
-		<?php echo $logo; ?>
+			<?php echo $logo; ?>
 		[/header]
-		<?php /**********************************	BODY	*********************************************/ ?>
 		[section]
 			<jdoc:include type="message" />
 			<jdoc:include type="component" />	
 		[/section]
-		<?php /**********************************	FOOTER	*********************************************/ ?>
 		[footer]
-		
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
 		[/footer]
 		<?php
 			switch($Params_grpsJs):
@@ -242,18 +258,22 @@ $Params_grpsJs = $this->params->get('groups-method');
 		?>  
 	<?php break; case 'metroui': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
-		<?php /**********************************	header	*********************************************/ ?>
 		[header]
 			<?php echo $logo; ?>
 		[/header]
-		<?php /**********************************	BODY	*********************************************/ ?>
 		[section]
 			<jdoc:include type="message" />
 			<jdoc:include type="component" />	
 		[/section]
-		<?php /**********************************	FOOTER	*********************************************/ ?>
 		[footer]
-		
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
 		[/footer]
 		<?php
 			switch($Params_grpsJs):

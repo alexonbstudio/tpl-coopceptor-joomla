@@ -27,7 +27,7 @@ $sitename = $apps->get('sitename');
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $this->title; ?> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="ronots" content="noindex,nofollow">
 	<link rel="stylesheet" href="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="<?php echo $this->baseurl.'/templates/'.$this->template.'/assets/production/css/full.min.css'; ?>" type="text/css">
@@ -37,7 +37,8 @@ $sitename = $apps->get('sitename');
 	<?php endif; ?>
 	<link href="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 	<!--<if lt IE 9>
-		<script src="<?php echo $this->baseurl; ?>/media/mod_opensource//html5.js"></script>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<!<endif>-->
 </head>
 <body>
@@ -83,7 +84,7 @@ $sitename = $apps->get('sitename');
 			</div>
 		</section>
 		<footer>
-		
+			
 		</footer>
 		<script src="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.js"></script> 	
 
