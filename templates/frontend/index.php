@@ -65,9 +65,6 @@ if (file_exists($userCss) && filesize($userCss) > 0)
 	$docs->addStyleSheetVersionVersion('templates/' . $this->template . '/css/user.css');
 }
 
-// Load optional RTL Bootstrap CSS
-//JHtml::_('bootstrap.loadCss', false, $this->direction);
-
 // Adjusting content width
 if ($this->countModules('position-7') && $this->countModules('position-8'))
 {
@@ -90,28 +87,27 @@ else
 
 if ($this->params->get('logoFile')){ $logo = '[img src="'.JUri::root() . $this->params->get('logoFile').'" alt="'.$sitename.'" /]'; } else { $logo = $sitename; }
 
-//CSS CUSTM PARAMS
-$FullCss = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.css';
-$FullCssMin = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css';
-$TPLCss = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.css';
-$TPLCssMin = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css';
-$Params_grpsCSS = $this->params->get('groups-method');
-switch($Params_grpsCSS):
-	case 'base': if (file_exists($FullCss) && filesize($FullCss) > 0) { $docs->addStyleSheetVersion($FullCss); } break;
-	case 'default': if (file_exists($TPLCss) && filesize($TPLCss) > 0) { $docs->addStyleSheetVersion($TPLCss); } break;
-	case 'developpment': if (file_exists($TPLCss) && filesize($TPLCss) > 0) { $docs->addStyleSheetVersion($TPLCss); } if (file_exists($FullCss) && filesize($FullCss) > 0) { $docs->addStyleSheetVersion($FullCss); } break;
-	case 'custom': if (file_exists($FullCss) && filesize($FullCss) > 0) { $docs->addStyleSheetVersion($FullCss); } if (file_exists($TPLCss) && filesize($TPLCss) > 0) { $docs->addStyleSheetVersion($TPLCss); } break;
-	case 'production': if (file_exists($FullCssMin) && filesize($FullCssMin) > 0) { $docs->addStyleSheetVersion($FullCssMin); } break;
-endswitch;
-//Js CUSTM PARAMS
-$FullJs = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.js';
-$FullJsMin = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.min.js';
-$TPLJs = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js';
-$TPLJsMin = '/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.min.js';
 $Params_grpsJs = $this->params->get('groups-method');
-
+$Params_grpsCSS = $this->params->get('groups-method');
+if ($Params_grpsJs == 'production') : 
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
+elseif ($Params_grpsJs == 'custom') : 
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
+elseif ($Params_grpsJs == 'developpment') : 
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
+elseif ($Params_grpsJs == 'default') : 
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
+elseif ($Params_grpsJs == 'base') : 
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
+	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
+endif;
 
 ?>
+
 [doctype html="html" /]
 <html <?php echo $params->get('ampHTML'); ?> lang="en" dir="<?php echo $this->direction; ?>">
 	[head]<jdoc:include type="head" />[/head]
@@ -133,29 +129,7 @@ $Params_grpsJs = $this->params->get('groups-method');
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
-		[/footer]
-		<?php
-			switch($Params_grpsJs):
-				case 'base': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'default': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'developpment': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]';} 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'custom': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'production': 
-					if (file_exists($FullJsMin) && filesize($FullJsMin) > 0) { echo '[script src="'.$FullJsMin.'" /]'; } 
-				break;
-			endswitch;
-		?>
-		[script src="<?php echo $this->baseurl.'/templates/'.$this->template; ?>/assets/<?php echo $this->params->get('groups-method'); ?>/js/application.js" /]  
+		[/footer] 
 	<?php break; case 'boostrap3': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
@@ -175,28 +149,6 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-		<?php
-			switch($Params_grpsJs):
-				case 'base': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'default': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'developpment': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]';} 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'custom': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'production': 
-					if (file_exists($FullJsMin) && filesize($FullJsMin) > 0) { echo '[script src="'.$FullJsMin.'" /]'; } 
-				break;
-			endswitch;
-		?>
-		[script src="<?php echo $this->baseurl.'/templates/'.$this->template; ?>/assets/<?php echo $this->params->get('groups-method'); ?>/js/application.js" /]
 	<?php break; case 'amp': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
@@ -235,27 +187,6 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-		<?php
-			switch($Params_grpsJs):
-				case 'base': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'default': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'developpment': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]';} 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'custom': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'production': 
-					if (file_exists($FullJsMin) && filesize($FullJsMin) > 0) { echo '[script src="'.$FullJsMin.'" /]'; } 
-				break;
-			endswitch;
-		?>  
 	<?php break; case 'metroui': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
@@ -275,31 +206,26 @@ $Params_grpsJs = $this->params->get('groups-method');
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-		<?php
-			switch($Params_grpsJs):
-				case 'base': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'default': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'developpment': 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]';} 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-				break;
-				case 'custom': 
-					if (file_exists($FullJs) && filesize($FullJs) > 0) { echo '[script src="'.$FullJs.'" /]'; } 
-					if (file_exists($TPLJs) && filesize($TPLJs) > 0) { echo '[script src="'.$TPLJs.'" /]'; } 
-				break;
-				case 'production': 
-					if (file_exists($FullJsMin) && filesize($FullJsMin) > 0) { echo '[script src="'.$FullJsMin.'" /]'; } 
-				break;
-			endswitch;
-		?>
 	<?php break; endswitch; ?>
-		<?php /**********************************	OTHERS	*********************************************/ ?>
-		<?php if (!$params->get('ampHTML') == 'amp'): ?>[cookies legal="<?php echo JText::_('TPL_COOPCEPTOR_COOKIESEU_HOME'); ?>" botton="Ok" url="#" /]<?php else: echo ' '; endif; ?>
+	
 		<?php if ($this->countModules('referencer')) : ?><jdoc:include type="modules" name="referencer" style="none" /><?php endif; ?>	
+		<?php if ($Params_grpsJs == 'production') : ?>
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.min.js'; ?>" /]			
+		<?php elseif ($Params_grpsJs == 'custom') : ?>	
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.js'; ?>" /]		
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]				
+		<?php elseif ($Params_grpsJs == 'developpment') : ?>	
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.js'; ?>" /]		
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]			
+		<?php elseif ($Params_grpsJs == 'default') : ?>	
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]
+		<?php elseif ($Params_grpsJs == 'base') : ?>	
+			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]	
+		<?php endif; ?>	
+	
+	
+		<?php if (!$params->get('ampHTML') == 'amp'): ?>[cookies legal="<?php echo JText::_('TPL_COOPCEPTOR_COOKIESEU_HOME'); ?>" botton="Ok" url="#" /]<?php else: echo ' '; endif; ?>
+		
 		<jdoc:include type="modules" name="debug" style="none" />	
 
 	[ends tags="body" /]  

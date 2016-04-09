@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.1" encoding="utf-8"?>
 <extension version="3.5" type="template" client="site" method="upgrade">
 	<name>coopcetor</name>
-	<version>1.0</version>
+	<version>1.1</version>
 	<creationDate>April, 5th 2016</creationDate>
 	<author>Alexon Balangue</author>
 	<authorUrl>www.alexonbalangue.me</authorUrl>
@@ -51,7 +51,7 @@
 					description="TPL_COOPCEPTOR_LOGO_LABEL" />
 				<field name="groups-html"
 					type="list"
-					default="boostrap2"
+					default="boostrap3"
 					label="TPL_COOPCEPTOR_METHODHTML_LABEL"
 					description="TPL_COOPCEPTOR_METHODHTML_DESC">
 						<option value="boostrap2">Boostrap V2.3.2</option>
@@ -62,7 +62,7 @@
 				</field>
 				<field name="groups-method"
 					type="list"
-					default="base"
+					default="production"
 					label="TPL_COOPCEPTOR_METHODDESIGNER_LABEL"
 					description="TPL_COOPCEPTOR_METHODDESIGNER_DESC">
 						<option value="base">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_BASE</option>

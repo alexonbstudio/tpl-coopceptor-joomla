@@ -84,7 +84,8 @@ $sitename = $apps->get('sitename');
 			</div>
 		</section>
 		<footer>
-			
+			&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by <a href="//www.AlexonBalangue.me" target="_top">www.AlexonBalangue.me</a>
 		</footer>
 		<script src="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.js"></script> 	
 
