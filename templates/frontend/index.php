@@ -9,7 +9,7 @@
 
 
 defined('_JEXEC') or die;
-
+if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);# Add this code For Joomla 3.3.4+
 $apps             = JFactory::getApplication();
 $docs             = JFactory::getDocument();
 $users            = JFactory::getUser();
@@ -20,6 +20,7 @@ $this->direction = $docs->direction;
 $params = $apps->getTemplate(true)->params;
 
 $sitename = $apps->get('sitename');
+$desc_site = $apps->getCfg('MetaDesc');
 //PARAMS
 $Grps_html = $this->params->get('groups-html');
 $hide_joomla_default = $this->params->get('Pages-js-default');
