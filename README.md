@@ -101,6 +101,17 @@ Next extention "module" will supported - frontend:
 -mod_whosonline
 -mod_wrapper
 
+
+
+
+Next extention "Plugin" will supported - frontend:
+-jw-disqus (content)
+
+
+
+
+
+
 others - frontend:
 -modules.php
 -pagination.php
