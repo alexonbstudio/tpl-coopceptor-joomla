@@ -26,8 +26,9 @@ JFactory::getDocument()->addScriptDeclaration("
 
 <form action="<?php echo JRoute::_('index.php?option=com_config'); ?>" method="post" name="adminForm" id="templates-form" class="form-validate">
 
-	<div class="row-fluid">
+	<div class="row-fluid"><div class="span12">
 		<!-- Begin Content -->
+
 
 		<div class="btn-toolbar">
 			<div class="btn-group">
@@ -45,16 +46,16 @@ JFactory::getDocument()->addScriptDeclaration("
 		<hr class="hr-condensed" />
 
 		<div id="page-site" class="tab-pane active">
-			<div class="row-fluid">
+			<div class="row-fluid"><div class="span12">
 				<?php // Get the menu parameters that are automatically set but may be modified.
 				echo $this->loadTemplate('options'); ?>
-			</div>
+			</div></div>
 		</div>
 
 		<input type="hidden" name="task" value="" />
 		<?php echo JHtml::_('form.token'); ?>
 
 		<!-- End Content -->
-	</div>
+	</div></div>
 
 </form>

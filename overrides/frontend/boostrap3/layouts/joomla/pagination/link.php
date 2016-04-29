@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  Layout
  *
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -17,23 +17,23 @@ switch ((string) $item->text)
 {
 	// Check for "Start" item
 	case JText::_('JLIB_HTML_START') :
-		$icon = "icon-backward icon-first";
+		$icon = "icon-backward";
 		break;
 
 	// Check for "Prev" item
 	case $item->text == JText::_('JPREV') :
 		$item->text = JText::_('JPREVIOUS');
-		$icon = "icon-step-backward icon-previous";
+		$icon = "icon-step-backward";
 		break;
 
 	// Check for "Next" item
 	case JText::_('JNEXT') :
-		$icon = "icon-step-forward icon-next";
+		$icon = "icon-step-forward";
 		break;
 
 	// Check for "End" item
 	case JText::_('JLIB_HTML_END') :
-		$icon = "icon-forward icon-last";
+		$icon = "icon-forward";
 		break;
 
 	default:
@@ -43,7 +43,7 @@ switch ((string) $item->text)
 
 if ($icon !== null)
 {
-	$display = '<span class="' . $icon . '"></span>';
+	$display = '<i class="' . $icon . '"></i>';
 }
 
 if ($displayData['active'])

@@ -1,9 +1,9 @@
 <?php
 /**
- * @package     Joomla.Site
+ * @package     Joomla.site
  * @subpackage  com_config
  *
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -11,8 +11,7 @@ defined('_JEXEC') or die;
 
 $fieldSets = $this->form->getFieldsets('params');
 
-echo JHtml::_('bootstrap.startAccordion', 'collapseTypes');
-$i = 0;
+$i = 1;
 
 foreach ($fieldSets as $name => $fieldSet) :
 
@@ -52,4 +51,3 @@ endif;
 
 <?php echo JHtml::_('bootstrap.endSlide'); ?>
 <?php endforeach; ?>
-<?php echo JHtml::_('bootstrap.endAccordion'); ?>
