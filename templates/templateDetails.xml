@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension version="3.5" type="template" client="site" method="upgrade">
 	<name>coopcetor</name>
-	<version>1.1</version>
-	<creationDate>April, 5th 2016</creationDate>
+	<version>1.1.1</version>
+	<creationDate>May, 30th 2016</creationDate>
 	<author>Alexon Balangue</author>
 	<authorUrl>www.alexonbalangue.me</authorUrl>
 	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
@@ -14,6 +14,7 @@
 		<filename>offline.php</filename>
 		<filename>favicon.ico</filename>
 		<filename>index.php</filename>
+		<filename>index.html</filename>
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
@@ -22,7 +23,48 @@
 		<folder>language</folder>
 	</files>
 	<positions>
-		<position>banner</position>
+		<position>bs2-home</position>
+		<position>bs2-breadcrumb</position>
+		<position>bs2-footer1</position>
+		<position>bs2-footer2</position>
+		<position>bs2-footer3</position>
+		<position>bs2-footer4</position>
+	<!-- Boostrap3 - home -->
+		<position>bs3-home</position>
+		<position>bs3-breadcrumb</position>
+		<position>bs3-footer1</position>
+		<position>bs3-footer2</position>
+		<position>bs3-footer3</position>
+		<position>bs3-footer4</position>
+	<!-- amp - home -->
+		<position>amp-home</position>
+		<position>amp-breadcrumb</position>
+		<position>amp-footer1</position>
+		<position>amp-footer2</position>
+		<position>amp-footer3</position>
+		<position>amp-footer4</position>
+	<!-- Foundation - home -->
+		<position>fi-home</position>
+		<position>fi-breadcrumb</position>
+		<position>fi-footer1</position>
+		<position>fi-footer2</position>
+		<position>fi-footer3</position>
+		<position>fi-footer4</position>
+	<!-- MetroUI - home -->
+		<position>mui-home</position>
+		<position>mui-breadcrumb</position>
+		<position>mui-footer1</position>
+		<position>mui-footer2</position>
+		<position>mui-footer3</position>
+		<position>mui-footer4</position>
+	<!-- base and advestising -->
+		<position>menu</position>
+		<position>banner-footer</position>
+		<position>banner-mfooter</position>
+		<position>banner-header</position>
+		<position>banner-mheader</position>
+		<position>sidebar-right</position>
+		<position>sidebar-left</position>
 		<position>footer</position>
 		<position>referencer</position>
 		<position>debug</position>
@@ -54,20 +96,23 @@
 					default="boostrap3"
 					label="TPL_COOPCEPTOR_METHODHTML_LABEL"
 					description="TPL_COOPCEPTOR_METHODHTML_DESC">
-						<option value="boostrap2">Boostrap V2.3.2</option>
-						<option value="boostrap3">Boostrap V3.3.6</option>
-						<option value="amp">AMP</option>
-						<option value="foundation">Foundation</option>
-						<option value="metroui">MetroUI</option>
+						<option value="">Neutral (without design)</option>
+						<option value="boostrap2-home">Boostrap V2.3.2 (Home)</option>
+						<option value="boostrap2-component">Boostrap V2.3.2 (Component)</option>
+						<option value="boostrap3-home">Boostrap V3.3.6 (Home)</option>
+						<option value="boostrap3-component">Boostrap V3.3.6 (Component)</option>
+						<option value="amp-home">AMP (Home)</option>
+						<option value="amp-component">AMP (Component)</option>
+						<option value="foundation-home">Foundation (Home)</option>
+						<option value="foundation-component">Foundation (Component)</option>
+						<option value="metroui-home">MetroUI (Home)</option>
+						<option value="metroui-component">MetroUI (Component)</option>
 				</field>
 				<field name="groups-method"
 					type="list"
-					default="production"
+					default="custom"
 					label="TPL_COOPCEPTOR_METHODDESIGNER_LABEL"
 					description="TPL_COOPCEPTOR_METHODDESIGNER_DESC">
-						<option value="base">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_BASE</option>
-						<option value="default">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEFAULT</option>
-						<option value="developpment">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEV</option>
 						<option value="custom">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_CUSTOM</option>
 						<option value="production">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_PROD</option>
 				</field>

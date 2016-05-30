@@ -23,7 +23,7 @@ $sitename = $apps->get('sitename');
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $this->title; ?> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></title>
@@ -43,7 +43,7 @@ $sitename = $apps->get('sitename');
 </head>
 <body>
 		<header>
-		
+			<h1><?php echo $sitename; ?></h1>
 		</header>
 		<section>				
 			<div class="row">

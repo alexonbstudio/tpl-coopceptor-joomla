@@ -11,26 +11,17 @@ defined('_JEXEC') or die;
 
 $apps             = JFactory::getApplication();
 $docs             = JFactory::getDocument();
+$this->language  = $docs->language;
+$this->direction = $docs->direction;
+
+// Getting params from template
+$params = $apps->getTemplate(true)->params;
 $sitename = $apps->get('sitename');
-
-$this->_script = $this->_scripts = array();	
-
-unset($docs->_scripts[JURI::root(true) . '/media/system/js/mootools-more.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/system/js/mootools-core.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/system/js/core.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/system/js/modal.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/system/js/caption.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/jui/js/jquery.min.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/jui/js/jquery-migrate.min.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/jui/js/jquery-noconflict.js']);
-unset($docs->_scripts[JURI::root(true) . '/media/jui/js/bootstrap.min.js']);
-
-require_once JPATH_ADMINISTRATOR . '/components/com_users/helpers/users.php';
 
 $twofactormethods = UsersHelper::getTwoFactorMethods();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 [head]
 	[meta charset="utf-8" /]
 	[title]<?php echo $sitename.' - '.JText::_('JOFFLINE_MESSAGE'); ?>[/title]
@@ -107,6 +98,6 @@ $twofactormethods = UsersHelper::getTwoFactorMethods();
         [ends tags="div" /]  
     [/footer]
 		[script src="<?php echo $this->baseurl; ?>/media/mod_opensource/jquery/jquery-1.x.min.js" /] 
-		[script src="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.min.js" /] 
+		[script src="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.js" /] 
 	[ends tags="body" /]  
 </html>

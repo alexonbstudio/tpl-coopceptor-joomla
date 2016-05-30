@@ -42,48 +42,48 @@ switch($hide_joomla_default):
 		unset($docs->_scripts[JURI::root(true) . '/media/jui/js/jquery-migrate.min.js']);
 		unset($docs->_scripts[JURI::root(true) . '/media/jui/js/jquery-noconflict.js']);
 		unset($docs->_scripts[JURI::root(true) . '/media/jui/js/bootstrap.min.js']);
+		
+		JHtmlBootstrap::framework(false);
 	break;
 	case 'component':
-		foreach ($this->_scripts as $script => $value){ if (preg_match('/media\/jui/i', $script)){ unset($this->_scripts[$script]); } }	
+		foreach ($this->_scripts as $script => $value){ 
+			if (preg_match('/media\/jui/i', $script)){ unset($this->_scripts[$script]); } 
+			if (preg_match('/media\/system/i', $script)){ unset($this->_scripts[$script]); } 
+		}	
+		
+		JHtmlBootstrap::framework(false);
 	break;
 endswitch;
 
-/*
-if($task == "edit" || $layout == "form" )
-{
-	$fullWidth = 1;
-}
-else
-{
-	$fullWidth = 0;
-}
 
-// Check for a custom CSS file
-$userCss = JPATH_SITE . '/templates/' . $this->template . '/css/user.css';
+if($task == "edit" || $layout == "form" ){ $fullWidth = 1; } else { $fullWidth = 0; }
 
-if (file_exists($userCss) && filesize($userCss) > 0)
-{
-	$docs->addStyleSheetVersionVersion('templates/' . $this->template . '/css/user.css');
+# Adjusting content width
+if ($this->countModules('sidebar-left') && $this->countModules('sidebar-right')){
+	$boostrap2_sizes = "span6";
+	$boostrap3_sizes = "col-xs-12 col-sm-6 col-md-6 col-lg-6";
+	$amp_sizes = "";
+	$foundation_sizes = "small-12 medium-6 large-6 columns";
+	$metroui_sizes = "cell colspan6";
+} elseif ($this->countModules('sidebar-left') && !$this->countModules('sidebar-right')){
+	$boostrap2_sizes = "span9";
+	$boostrap3_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
+	$amp_sizes = "";
+	$foundation_sizes = "small-12 medium-9 large-9 columns";
+	$metroui_sizes = "cell colspan9";
+} elseif (!$this->countModules('sidebar-left') && $this->countModules('sidebar-right')){
+	$boostrap2_sizes = "span9";
+	$boostrap3_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
+	$amp_sizes = "";
+	$foundation_sizes = "small-12 medium-9 large-9 columns";
+	$metroui_sizes = "cell colspan9";
+} else {
+	$boostrap2_sizes = "span12";
+	$boostrap3_sizes = "col-xs-12 col-sm-12 col-md-12 col-lg-12";
+	$amp_sizes = "";
+	$foundation_sizes = "small-12 medium-expand large-expand columns";
+	$metroui_sizes = "cell colspan12";
 }
-
-// Adjusting content width
-if ($this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span6";
-}
-elseif ($this->countModules('position-7') && !$this->countModules('position-8'))
-{
-	$span = "span9";
-}
-elseif (!$this->countModules('position-7') && $this->countModules('position-8'))
-{
-	$span = "span9";
-}
-else
-{
-	$span = "span12";
-}
-*/
 // Logo file or site title param
 
 if ($this->params->get('logoFile')){ $logo = '[img src="'.JUri::root() . $this->params->get('logoFile').'" alt="'.$sitename.'" /]'; } else { $logo = $sitename; }
@@ -96,23 +96,38 @@ if ($Params_grpsJs == 'production') :
 elseif ($Params_grpsJs == 'custom') : 
 	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
 	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
-elseif ($Params_grpsJs == 'developpment') : 
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
-elseif ($Params_grpsJs == 'default') : 
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
-elseif ($Params_grpsJs == 'base') : 
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/full.min.css');
-	$docs->addStyleSheetVersion(JUri::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/css/template.min.css');
 endif;
 
+require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'html'.DIRECTORY_SEPARATOR.'renderer'.DIRECTORY_SEPARATOR.'head.php';
+require_once JPATH_SITE.DIRECTORY_SEPARATOR.'media'.DIRECTORY_SEPARATOR.'mod_opensource'.DIRECTORY_SEPARATOR.'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+$JMobileDetectHeader = $detect->isMobile() && $detect->isTablet() ? '<jdoc:include type="modules" name="banner-mheader" style="nones" />' : '<jdoc:include type="modules" name="banner-header" style="nones" />';
+$JMobileDetectFooter = $detect->isMobile() && $detect->isTablet() ? '<jdoc:include type="modules" name="banner-mfooter" style="nones" />' : '<jdoc:include type="modules" name="banner-footer" style="nones" />';
 ?>
 
 [doctype html="html" /]
 <html <?php echo $params->get('ampHTML'); ?> lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 	[head]<jdoc:include type="head" />[/head]
-	<?php switch($Grps_html): case 'boostrap2': ?>
+	<?php switch($Grps_html): case 'boostrap2-home': ?>
+		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			<jdoc:include type="message" />
+			<jdoc:include type="bs2-home" />	
+		[/section]
+		[footer]
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
+		[/footer] 
+	<?php break; case 'boostrap2-component': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
 			<?php echo $logo; ?>
@@ -131,7 +146,26 @@ endif;
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer] 
-	<?php break; case 'boostrap3': ?>
+	<?php break; case 'boostrap3-home': ?>
+		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			<jdoc:include type="message" />
+			<jdoc:include type="bs3-home" />	
+		[/section]
+		[footer]
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class="col-lg-12 text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
+		[/footer]
+	<?php break; case 'boostrap3-component': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
 			<?php echo $logo; ?>
@@ -150,26 +184,26 @@ endif;
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-	<?php break; case 'amp': ?>
+	<?php break; case 'amp-home': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
 			<?php echo $logo; ?>
 		[/header]
 		[section]
 			<jdoc:include type="message" />
-			<jdoc:include type="component" />	
+			<jdoc:include type="amp-home" />	
 		[/section]
 		[footer]
 			[begins tags="div" class="container" /]  
 				[begins tags="div" class="row" /]  
-					[begins tags="div" class="col-lg-12 text-center" /]  
+					[begins tags="div" class=" text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
 						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-	<?php break; case 'foundation': ?>
+	<?php break; case 'amp-component': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
 			<?php echo $logo; ?>
@@ -181,14 +215,33 @@ endif;
 		[footer]
 			[begins tags="div" class="container" /]  
 				[begins tags="div" class="row" /]  
-					[begins tags="div" class="col-lg-12 text-center" /]  
+					[begins tags="div" class=" text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
 						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
 		[/footer]
-	<?php break; case 'metroui': ?>
+	<?php break; case 'foundation-home': ?>
+		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			<jdoc:include type="message" />
+			<jdoc:include type="fi-home" />	
+		[/section]
+		[footer]
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class=" text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
+		[/footer]
+	<?php break; case 'foundation-component': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
 		[header]
 			<?php echo $logo; ?>
@@ -200,12 +253,62 @@ endif;
 		[footer]
 			[begins tags="div" class="container" /]  
 				[begins tags="div" class="row" /]  
-					[begins tags="div" class="col-lg-12 text-center" /]  
+					[begins tags="div" class=" text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
 						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
 			[ends tags="div" /]  
+		[/footer]
+	<?php break; case 'metroui-home': ?>
+		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			<jdoc:include type="message" />
+			<jdoc:include type="mui-home" />	
+		[/section]
+		[footer]
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class=" text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
+		[/footer]
+	<?php break; case 'metroui-component': ?>
+		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			<jdoc:include type="message" />
+			<jdoc:include type="component" />	
+		[/section]
+		[footer]
+			[begins tags="div" class="container" /]  
+				[begins tags="div" class="row" /]  
+					[begins tags="div" class=" text-center" /]  
+						&copy; <?php echo date('Y').' '.$sitename; ?> - 
+						Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
+					[ends tags="div" /]  
+				[ends tags="div" /]  
+			[ends tags="div" /]  
+		[/footer]
+	<?php break; default: ?>
+		[begins tags="body" /]
+		[header]
+			<?php echo $logo; ?>
+		[/header]
+		[section]
+			No content here, please contact the webmaster.	
+		[/section]
+		[footer] 
+			&copy; <?php echo date("Y").' '.$sitename; ?> - 
+			Conception by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url]  
 		[/footer]
 	<?php break; endswitch; ?>
 	
@@ -215,13 +318,7 @@ endif;
 		<?php elseif ($Params_grpsJs == 'custom') : ?>	
 			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.js'; ?>" /]		
 			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]				
-		<?php elseif ($Params_grpsJs == 'developpment') : ?>	
-			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/full.js'; ?>" /]		
-			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]			
-		<?php elseif ($Params_grpsJs == 'default') : ?>	
-			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]
-		<?php elseif ($Params_grpsJs == 'base') : ?>	
-			[script src="<?php echo JURI::root(true).'/templates/'.$this->template.'/assets/'.$this->params->get('groups-method').'/js/template.js'; ?>" /]	
+
 		<?php endif; ?>	
 	
 	
