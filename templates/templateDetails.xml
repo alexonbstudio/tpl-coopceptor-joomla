@@ -2,7 +2,7 @@
 <extension version="3.5" type="template" client="site" method="upgrade">
 	<name>coopcetor</name>
 	<version>1.1.1</version>
-	<creationDate>May, 30th 2016</creationDate>
+	<creationDate>June, 3th 2016</creationDate>
 	<author>Alexon Balangue</author>
 	<authorUrl>www.alexonbalangue.me</authorUrl>
 	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
@@ -36,6 +36,13 @@
 		<position>bs3-footer2</position>
 		<position>bs3-footer3</position>
 		<position>bs3-footer4</position>
+	<!-- Boostrap4 - home -->
+		<position>bs4-home</position>
+		<position>bs4-breadcrumb</position>
+		<position>bs4-footer1</position>
+		<position>bs4-footer2</position>
+		<position>bs4-footer3</position>
+		<position>bs4-footer4</position>
 	<!-- amp - home -->
 		<position>amp-home</position>
 		<position>amp-breadcrumb</position>
@@ -101,6 +108,8 @@
 						<option value="boostrap2-component">Boostrap V2.3.2 (Component)</option>
 						<option value="boostrap3-home">Boostrap V3.3.6 (Home)</option>
 						<option value="boostrap3-component">Boostrap V3.3.6 (Component)</option>
+						<option value="boostrap4-home">Boostrap V4.0-alpha (Home)</option>
+						<option value="boostrap4-component">Boostrap V4.0-alpha (Component)</option>
 						<option value="amp-home">AMP (Home)</option>
 						<option value="amp-component">AMP (Component)</option>
 						<option value="foundation-home">Foundation (Home)</option>

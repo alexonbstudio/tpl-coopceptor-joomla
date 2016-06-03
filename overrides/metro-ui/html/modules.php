@@ -1,7 +1,7 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  Templates.coopceptor (Stylish)
+ * @subpackage  Templates.coopceptor
  *
  * @copyright   Copyright (C) 2016 Alexon Balangue. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -124,6 +124,93 @@ function modChrome_bs3FooterShow($module, &$params, &$attribs)
 		echo '</' . $moduleTag . '>';
 	}
 }
+
+/*********Boostrap4*********/
+function modChrome_bs4withtitlehead($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'span' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '">' . $module->title . '</' . $headerTag . '>';
+			}
+
+			echo $module->content;
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4frontendshowNocolor($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'span' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '" itemprop="alternativeHealine">' . $module->title . '</' . $headerTag . '><hr />';
+			}
+
+			echo '<div class="row">'.$module->content.'</div>';
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4frontendshowYescolor($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'span' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '" itemprop="alternativeHealine">' . $module->title . '</' . $headerTag . '><hr />';
+			}
+
+			echo '<div class="row">'.$module->content.'</div>';
+		echo '</' . $moduleTag . '>';
+	}
+}
+function modChrome_bs4FooterShow($module, &$params, &$attribs)
+{
+	$moduleTag     = $params->get('module_tag', 'div');
+	$bootstrapSize = (int) $params->get('bootstrap_size', 0);
+	$moduleClass   = $bootstrapSize != 0 ? 'span' . $bootstrapSize : '';
+	$headerTag     = htmlspecialchars($params->get('header_tag', 'h3'));
+	$headerClass   = htmlspecialchars($params->get('header_class', 'text-center'));
+
+	if ($module->content)
+	{
+		echo '<' . $moduleTag . ' class="' . $moduleClass . '">';
+
+			if ($module->showtitle)
+			{
+				echo '<' . $headerTag . ' class="' . $headerClass . '">' . $module->title . '</' . $headerTag . '>';
+			}
+
+			echo $module->content;
+		echo '</' . $moduleTag . '>';
+	}
+}
+
 
 /******************BOOSTRAP 2***********************/
 function modChrome_bs2withtitlehead($module, &$params, &$attribs)

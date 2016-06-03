@@ -26,7 +26,7 @@ $twofactormethods = UsersHelper::getTwoFactorMethods();
 	[meta charset="utf-8" /]
 	[title]<?php echo $sitename.' - '.JText::_('JOFFLINE_MESSAGE'); ?>[/title]
 	[meta name="viewport" content="width=device-width, initial-scale=1" /]
-	[meta name="ronots" content="noindex,nofollow" /]	
+	[meta name="robots" content="noindex,nofollow" /]	
 	[link rel="stylesheet" href="<?php echo $this->baseurl.'/templates/'.$this->template.'/assets/production/css/offline.min.css'; ?>" type="text/css" /]
 	<?php if ($apps->get('debug_lang', '0') == '1' || $apps->get('debug', '0') == '1') : ?>
 		[link rel="stylesheet" href="<?php echo $this->baseurl; ?>/media/cms/css/debug.css" type="text/css" /]
@@ -35,7 +35,7 @@ $twofactormethods = UsersHelper::getTwoFactorMethods();
 	[link rel="stylesheet" href="<?php echo $this->baseurl; ?>/media/mod_opensource/fontawesome/font-awesome.min.css" /]
 	[link rel="stylesheet" href="<?php echo $this->baseurl; ?>/media/mod_opensource/bootstrap/bootstrap.min.css" /]
 [/head]
-[begins tags="body" mdatatype="http://schema.org/WebPage" /]
+[begins mdatatype="http://schema.org/WebPage" /]
 <jdoc:include type="message" />
     [header class="well"]
         [begins tags="div" class="container" /]  
