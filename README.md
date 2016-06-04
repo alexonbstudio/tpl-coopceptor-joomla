@@ -4,7 +4,7 @@ Template created from by http://www.alexonbalangue.me (here only developpment mo
 
 Autorisate and maintener this template the author by Alexon Balangue:
 -You can custom it's togethere sinces github only
--Not take or host and share on you website (if custom tpl)
+-Not take or host and share on you website (if template custom autorisate saller)
 -You're not autorisate to sales order that template
 -totaly free
 
@@ -17,23 +17,25 @@ Frontend - Default:
 -pagination.php
 -layouts
 -renderer
--
+
 
 IF problem:
-ON: overrides/<Framework-HTML5>/layouts/joomla/html/formbehavior/chosen.php:=
-#JHtml::_('script', 'jui/chosen.jquery.min.js', false, true, false, false, $debug);
-#JHtml::_('stylesheet', 'jui/chosen.css', false, true);
-ON: overrides/<Framework-HTML5>/layouts/joomla/html/formbehavior/ajaxchosen.php:=
-#JHtml::_('jquery.framework');
-#JHtml::_('script', 'jui/ajax-chosen.min.js', false, true, false, false, $debug);
-ON: overrides/<Framework-HTML5>/layouts/joomla/form/field/checkboxes.php & radio.php:=
-#JHtml::_('script', 'system/html5fallback.js', false, true);
-ON: overrides/<Framework-HTML5>/layouts/joomla/form/field/user.php:=
-#JHtml::script('jui/fielduser.min.js', false, true, false, false, true);
-ON: overrides/<Framework-HTML5>/layouts/joomla/form/field/media.php:=
-#JHtml::_('script', 'media/mediafield-mootools.min.js', true, true, false, false, true);
-ON: overrides/<Framework-HTML5>/layouts/joomla/form/renderfield.php:=
-#JHtml::_('script', 'jui/cms.js', false, true);
+
+#JQuery default use on joomla shur to disable it (or maybe 3part component use this):=
+JHtml::_('jquery.framework');
+#ON: overrides/Framework-HTML5/layouts/joomla/html/formbehavior/chosen.php:=
+JHtml::_('script', 'jui/chosen.jquery.min.js', false, true, false, false, $debug);
+JHtml::_('stylesheet', 'jui/chosen.css', false, true);
+#ON: overrides/Framework-HTML5/layouts/joomla/html/formbehavior/ajaxchosen.php:=
+JHtml::_('script', 'jui/ajax-chosen.min.js', false, true, false, false, $debug);
+#ON: overrides/Framework-HTML5/layouts/joomla/form/field/checkboxes.php & radio.php:=
+JHtml::_('script', 'system/html5fallback.js', false, true);
+#ON: overrides/Framework-HTML5/layouts/joomla/form/field/user.php:=
+JHtml::script('jui/fielduser.min.js', false, true, false, false, true);
+#ON: overrides/Framework-HTML5/layouts/joomla/form/field/media.php:=
+JHtml::_('script', 'media/mediafield-mootools.min.js', true, true, false, false, true);
+#ON: overrides/Framework-HTML5/layouts/joomla/form/renderfield.php:=
+JHtml::_('script', 'jui/cms.js', false, true);
 
 
 
