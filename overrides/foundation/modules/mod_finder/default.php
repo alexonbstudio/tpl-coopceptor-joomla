@@ -25,7 +25,7 @@ $output = '<input type="text" name="q" id="mod-finder-searchword" class="search-
 	. ' placeholder="' . JText::_('MOD_FINDER_SEARCH_VALUE') . '"/>';
 
 $showLabel  = $params->get('show_label', 1);
-$labelClass = (!$showLabel ? 'element-invisible ' : '') . 'finder' . $suffix;
+$labelClass = (!$showLabel ? 'invisible ' : '') . 'finder' . $suffix;
 $label      = '<label for="mod-finder-searchword" class="' . $labelClass . '">' . $params->get('alt_label', JText::_('JSEARCH_FILTER_SUBMIT')) . '</label>';
 
 switch ($params->get('label_pos', 'left'))
@@ -148,7 +148,7 @@ JFactory::getDocument()->addScriptDeclaration($script);
 ?>
 
 <form id="mod-finder-searchform" action="<?php echo JRoute::_($route); ?>" method="get" class="form-search">
-	<div class="finder<?php echo $suffix; ?>">
+	<div class="<?php echo $suffix; ?>">
 		<?php
 		// Show the form fields.
 		echo $output;

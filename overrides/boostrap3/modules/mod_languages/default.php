@@ -15,9 +15,9 @@ if ($params->get('dropdown', 1))
 	JHtml::_('formbehavior.chosen', 'select');
 }
 ?>
-<div class="mod-languages<?php echo $moduleclass_sfx; ?>">
+<div class="<?php echo $moduleclass_sfx; ?>">
 <?php if ($headerText) : ?>
-	<div class="pretext"><p><?php echo $headerText; ?></p></div>
+	<p><?php echo $headerText; ?></p>
 <?php endif; ?>
 
 <?php if ($params->get('dropdown', 1)) : ?>
@@ -30,10 +30,10 @@ if ($params->get('dropdown', 1))
 	</select>
 	</form>
 <?php else : ?>
-	<ul class="<?php echo $params->get('inline', 1) ? 'lang-inline' : 'lang-block'; ?>">
+	<ul class="<?php echo $params->get('inline', 1) ? 'inline' : 'block'; ?>">
 	<?php foreach ($list as $language) : ?>
 		<?php if ($params->get('show_active', 0) || !$language->active) : ?>
-			<li class="<?php echo $language->active ? 'lang-active' : ''; ?>" dir="<?php echo $language->rtl ? 'rtl' : 'ltr'; ?>">
+			<li class="<?php echo $language->active ? 'active' : ''; ?>" dir="<?php echo $language->rtl ? 'rtl' : 'ltr'; ?>">
 			<a href="<?php echo $language->link; ?>">
 			<?php if ($params->get('image', 1)) : ?>
 				<?php echo JHtml::_('image', 'mod_languages/' . $language->image . '.gif', $language->title_native, array('title' => $language->title_native), true); ?>
@@ -46,8 +46,5 @@ if ($params->get('dropdown', 1))
 	<?php endforeach; ?>
 	</ul>
 <?php endif; ?>
-
-<?php if ($footerText) : ?>
-	<div class="posttext"><p><?php echo $footerText; ?></p></div>
-<?php endif; ?>
+<?php if ($footerText) : ?><p><?php echo $footerText; ?></p><?php endif; ?>
 </div>

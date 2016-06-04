@@ -33,9 +33,9 @@ foreach (JPluginHelper::getPlugin('captcha') as $plugin)
 			<?php endif; ?>
 			<?php $fields = $this->form->getFieldset($fieldset->name); ?>
 			<?php if (count($fields)) : ?>
-				<fieldset>
+				
 					<?php if (isset($fieldset->label) && strlen($legend = trim(JText::_($fieldset->label)))) : ?>
-						<legend><?php echo $legend; ?></legend>
+						<label><?php echo $legend; ?></label>
 					<?php endif; ?>
 					<?php foreach ($fields as $field) : ?>
 						<?php if ($field->name === 'contact_email_copy' && !$this->params->get('show_email_copy')) : ?>
@@ -43,11 +43,11 @@ foreach (JPluginHelper::getPlugin('captcha') as $plugin)
 						<?php endif; ?>
 						<?php echo $field->renderField(); ?>
 					<?php endforeach; ?>
-				</fieldset>
+				
 			<?php endif; ?>
 		<?php endforeach; ?>
-		<div class="control-group">
-			<div class="controls">
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
 				<button class="btn btn-primary validate" type="submit"><?php echo JText::_('COM_CONTACT_CONTACT_SEND'); ?></button>
 				<input type="hidden" name="option" value="com_contact" />
 				<input type="hidden" name="task" value="contact.submit" />

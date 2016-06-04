@@ -39,30 +39,30 @@ JFactory::getDocument()->addScriptDeclaration("
 	</div>
 
 	<form action="<?php echo JUri::base() ?>index.php" id="mailtoForm" method="post">
-		<div class="formelm">
+		<div class="form-group">
 			<label for="mailto_field"><?php echo JText::_('COM_MAILTO_EMAIL_TO'); ?></label>
 			<input type="text" id="mailto_field" name="mailto" class="inputbox" size="25" value="<?php echo $this->escape($data->mailto); ?>"/>
 		</div>
-		<div class="formelm">
+		<div class="form-group">
 			<label for="sender_field">
 			<?php echo JText::_('COM_MAILTO_SENDER'); ?></label>
 			<input type="text" id="sender_field" name="sender" class="inputbox" value="<?php echo $this->escape($data->sender); ?>" size="25" />
 		</div>
-		<div class="formelm">
+		<div class="form-group">
 			<label for="from_field">
 			<?php echo JText::_('COM_MAILTO_YOUR_EMAIL'); ?></label>
 			<input type="text" id="from_field" name="from" class="inputbox" value="<?php echo $this->escape($data->from); ?>" size="25" />
 		</div>
-		<div class="formelm">
+		<div class="form-group">
 			<label for="subject_field">
 			<?php echo JText::_('COM_MAILTO_SUBJECT'); ?></label>
 			<input type="text" id="subject_field" name="subject" class="inputbox" value="<?php echo $this->escape($data->subject); ?>" size="25" />
 		</div>
 		<p>
-			<button class="button" onclick="return Joomla.submitbutton('send');">
+			<button class="btn btn-primary" onclick="return Joomla.submitbutton('send');">
 				<?php echo JText::_('COM_MAILTO_SEND'); ?>
 			</button>
-			<button class="button" onclick="window.close();return false;">
+			<button class="btn btn-danger" onclick="window.close();return false;">
 				<?php echo JText::_('COM_MAILTO_CANCEL'); ?>
 			</button>
 		</p>

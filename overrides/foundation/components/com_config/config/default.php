@@ -26,7 +26,7 @@ JFactory::getDocument()->addScriptDeclaration("
 
 <form action="<?php echo JRoute::_('index.php?option=com_config');?>" id="application-form" method="post" name="adminForm" class="form-validate">
 
-	<div class="row-fluid">
+	<div class="row">
 		<!-- Begin Content -->
 
 		<div class="btn-toolbar">
@@ -34,9 +34,7 @@ JFactory::getDocument()->addScriptDeclaration("
 				<button type="button" class="btn btn-primary" onclick="Joomla.submitbutton('config.save.config.apply')">
 					<span class="icon-ok"></span> <?php echo JText::_('JSAVE') ?>
 				</button>
-			</div>
-			<div class="btn-group">
-				<button type="button" class="btn" onclick="Joomla.submitbutton('config.cancel')">
+				<button type="button" class="btn btn-danger" onclick="Joomla.submitbutton('config.cancel')">
 					<span class="icon-cancel"></span> <?php echo JText::_('JCANCEL') ?>
 				</button>
 			</div>
@@ -45,7 +43,7 @@ JFactory::getDocument()->addScriptDeclaration("
 		<hr class="hr-condensed" />
 
 		<div id="page-site" class="tab-pane active">
-			<div class="row-fluid">
+			<div class="row">
 				<?php echo $this->loadTemplate('site'); ?>
 				<?php echo $this->loadTemplate('metadata'); ?>
 				<?php echo $this->loadTemplate('seo'); ?>

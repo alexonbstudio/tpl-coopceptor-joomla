@@ -30,11 +30,11 @@ endif;
 <?php foreach ($this->form->getFieldset($name) as $field) : ?>
 
 	<li>
-		<div class="control-group">
-			<div class="control-label">
+		<div class="form-group">
+			<div class="col-sm-2 control-label">
 				<?php echo $field->label; ?>
 			</div>
-			<div class="controls">
+			<div class="col-sm-offset-2 col-sm-10">
 				<?php
 				// If multi-language site, make menu-type selection read-only
 				if (JLanguageMultilang::isEnabled() && $this->item['module'] == 'mod_menu' && $field->getAttribute('name') == 'menutype')

@@ -15,10 +15,10 @@ defined('_JEXEC') or die;
 	<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_INTRO') ?>
 </div>
 
-<fieldset>
-	<legend>
+
+	<label>
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_HEAD') ?>
-	</legend>
+	</label>
 	<p>
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_TEXT') ?>
 	</p>
@@ -37,38 +37,40 @@ defined('_JEXEC') or die;
 	<div class="alert">
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP1_WARN') ?>
 	</div>
-</fieldset>
 
-<fieldset>
-	<legend>
+
+
+	<label>
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_HEAD') ?>
-	</legend>
+	</label>
 
-	<div class="span6">
+	<div class="col-md-6">
 		<p>
 			<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_TEXT') ?>
 		</p>
-		<table class="table table-striped">
-			<tr>
-				<td>
-					<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_ACCOUNT') ?>
-				</td>
-				<td>
-					<?php echo $username ?>@<?php echo $hostname ?>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_KEY') ?>
-				</td>
-				<td>
-					<?php echo $secret ?>
-				</td>
-			</tr>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-striped">
+				<tr>
+					<td>
+						<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_ACCOUNT') ?>
+					</td>
+					<td>
+						<?php echo $username ?>@<?php echo $hostname ?>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_KEY') ?>
+					</td>
+					<td>
+						<?php echo $secret ?>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
-	<div class="span6">
+	<div class="col-md-6">
 		<p>
 			<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_ALTTEXT') ?>
 			<br />
@@ -81,23 +83,23 @@ defined('_JEXEC') or die;
 	<div class="alert alert-info">
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP2_RESET') ?>
 	</div>
-</fieldset>
+
 
 <?php if ($new_totp): ?>
-<fieldset>
-	<legend>
+
+	<label>
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP3_HEAD') ?>
-	</legend>
+	</label>
 	<p>
 		<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP3_TEXT') ?>
 	</p>
-	<div class="control-group">
-		<label class="control-label" for="totpsecuritycode">
+	<div class="form-group">
+		<label class="col-sm-2 control-label" for="totpsecuritycode">
 			<?php echo JText::_('PLG_TWOFACTORAUTH_TOTP_STEP3_SECURITYCODE') ?>
 		</label>
-		<div class="controls">
-			<input type="text" class="input-small" name="jform[twofactor][totp][securitycode]" id="totpsecuritycode" autocomplete="0">
+		<div class="col-sm-offset-2 col-sm-10">
+			<input type="text" class="input-sm" name="jform[twofactor][totp][securitycode]" id="totpsecuritycode" autocomplete="0">
 		</div>
 	</div>
-</fieldset>
+
 <?php endif; ?>

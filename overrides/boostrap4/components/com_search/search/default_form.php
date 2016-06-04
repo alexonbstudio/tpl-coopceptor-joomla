@@ -27,16 +27,15 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 		<div class="clearfix"></div>
 	</div>
 
-	<div class="searchintro<?php echo $this->params->get('pageclass_sfx'); ?>">
+	<div class="<?php echo $this->params->get('pageclass_sfx'); ?>">
 		<?php if (!empty($this->searchword)):?>
 		<p><?php echo JText::plural('COM_SEARCH_SEARCH_KEYWORD_N_RESULTS', '<span class="badge badge-info">' . $this->total . '</span>');?></p>
 		<?php endif;?>
 	</div>
 
 	<?php if ($this->params->get('search_phrases', 1)) : ?>
-		<fieldset class="phrases">
-			<legend><?php echo JText::_('COM_SEARCH_FOR');?>
-			</legend>
+			<label><?php echo JText::_('COM_SEARCH_FOR');?>
+			</label>
 				<div class="phrases-box">
 				<?php echo $this->lists['searchphrase']; ?>
 				</div>
@@ -46,12 +45,11 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 				</label>
 				<?php echo $this->lists['ordering'];?>
 				</div>
-		</fieldset>
+		
 	<?php endif; ?>
 
 	<?php if ($this->params->get('search_areas', 1)) : ?>
-		<fieldset class="only">
-			<legend><?php echo JText::_('COM_SEARCH_SEARCH_ONLY');?></legend>
+			<label><?php echo JText::_('COM_SEARCH_SEARCH_ONLY');?></label>
 			<?php foreach ($this->searchareas['search'] as $val => $txt) :
 				$checked = is_array($this->searchareas['active']) && in_array($val, $this->searchareas['active']) ? 'checked="checked"' : '';
 			?>
@@ -60,7 +58,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 				<?php echo JText::_($txt); ?>
 			</label>
 			<?php endforeach; ?>
-		</fieldset>
+		
 	<?php endif; ?>
 
 <?php if ($this->total > 0) : ?>

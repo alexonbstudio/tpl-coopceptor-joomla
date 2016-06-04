@@ -37,12 +37,12 @@ JFactory::getDocument()->addScriptDeclaration("
 <form
 	action="<?php echo JRoute::_('index.php?option=com_config'); ?>"
 	method="post" name="adminForm" id="modules-form"
-	class="form-validate">
+	class="form-validate form-horizontal">
 
-	<div class="row-fluid">
+	<div class="row">
 
 		<!-- Begin Content -->
-		<div class="span12">
+		<div class="col-md-12">
 
 			<div class="btn-toolbar">
 				<div class="btn-group">
@@ -51,8 +51,6 @@ JFactory::getDocument()->addScriptDeclaration("
 						<span class="icon-apply"></span>
 						<?php echo JText::_('JAPPLY') ?>
 					</button>
-				</div>
-				<div class="btn-group">
 					<button type="button" class="btn btn-default"
 						onclick="Joomla.submitbutton('config.save.modules.save')">
 						<span class="icon-save"></span>
@@ -70,7 +68,7 @@ JFactory::getDocument()->addScriptDeclaration("
 
 			<hr class="hr-condensed" />
 
-			<legend><?php echo JText::_('COM_CONFIG_MODULES_SETTINGS_TITLE'); ?></legend>
+			<label><?php echo JText::_('COM_CONFIG_MODULES_SETTINGS_TITLE'); ?></label>
 
 			<div>
 				<?php echo JText::_('COM_CONFIG_MODULES_MODULE_NAME') ?>
@@ -81,30 +79,29 @@ JFactory::getDocument()->addScriptDeclaration("
 			</div>
 			<hr />
 
-			<div class="row-fluid">
-				<div class="span12">
-					<fieldset class="form-horizontal">
-						<div class="control-group">
-							<div class="control-label">
+			<div class="row">
+				<div class="col-md-12">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('title'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('title'); ?>
 							</div>
 						</div>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('showtitle'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('showtitle'); ?>
 							</div>
 						</div>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('position'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->loadTemplate('positions'); ?>
 							</div>
 						</div>
@@ -113,63 +110,63 @@ JFactory::getDocument()->addScriptDeclaration("
 
 						<?php
 						if (JFactory::getUser()->authorise('core.edit.state', 'com_modules.module.' . $this->item['id'])): ?>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('published'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('published'); ?>
 							</div>
 						</div>
 						<?php endif ?>
 
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('publish_up'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('publish_up'); ?>
 							</div>
 						</div>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('publish_down'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('publish_down'); ?>
 							</div>
 						</div>
 
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('access'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('access'); ?>
 							</div>
 						</div>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('ordering'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('ordering'); ?>
 							</div>
 						</div>
 
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('language'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('language'); ?>
 							</div>
 						</div>
-						<div class="control-group">
-							<div class="control-label">
+						<div class="form-group">
+							<div class="col-sm-2 control-label">
 								<?php echo $this->form->getLabel('note'); ?>
 							</div>
-							<div class="controls">
+							<div class="col-sm-offset-2 col-sm-10">
 								<?php echo $this->form->getInput('note'); ?>
 							</div>
 						</div>
@@ -185,7 +182,7 @@ JFactory::getDocument()->addScriptDeclaration("
 								<?php echo $this->form->getInput('content'); ?>
 							</div>
 						<?php endif; ?>
-					</fieldset>
+					
 				</div>
 
 				<input type="hidden" name="id" value="<?php echo $this->item['id'];?>" />

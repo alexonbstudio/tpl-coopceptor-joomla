@@ -9,16 +9,16 @@
 
 defined('_JEXEC') or die;
 ?>
-<fieldset class="form-horizontal">
-	<legend><?php echo JText::_('COM_CONFIG_SEO_SETTINGS'); ?></legend>
+
+	<label><?php echo JText::_('COM_CONFIG_SEO_SETTINGS'); ?></label>
 	<?php
 	foreach ($this->form->getFieldset('seo') as $field):
 	?>
-		<div class="control-group">
-			<div class="control-label"><?php echo $field->label; ?></div>
-			<div class="controls"><?php echo $field->input; ?></div>
+		<div class="form-group">
+			<div class="col-sm-2 control-label"><?php echo $field->label; ?></div>
+			<div class="col-sm-offset-2 col-sm-10"><?php echo $field->input; ?></div>
 		</div>
 	<?php
 	endforeach;
 	?>
-</fieldset>
+

@@ -46,7 +46,7 @@ if (!empty($this->items))
 	<fieldset class="filters btn-toolbar clearfix">
 		<?php if ($this->params->get('filter_field') != 'hide') :?>
 			<div class="btn-group">
-				<label class="filter-search-lbl element-invisible" for="filter-search">
+				<label class="filter-search-lbl invisible" for="filter-search">
 					<?php echo JText::_('COM_CONTENT_' . $this->params->get('filter_field') . '_FILTER_LABEL') . '&#160;'; ?>
 				</label>
 				<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_CONTENT_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_CONTENT_' . $this->params->get('filter_field') . '_FILTER_LABEL'); ?>" />
@@ -54,7 +54,7 @@ if (!empty($this->items))
 		<?php endif; ?>
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
 			<div class="btn-group pull-right">
-				<label for="limit" class="element-invisible">
+				<label for="limit" class="invisible">
 					<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 				</label>
 				<?php echo $this->pagination->getLimitBox(); ?>
@@ -65,7 +65,7 @@ if (!empty($this->items))
 		<input type="hidden" name="filter_order_Dir" value="" />
 		<input type="hidden" name="limitstart" value="" />
 		<input type="hidden" name="task" value="" />
-	</fieldset>
+	
 	<?php endif; ?>
 
 	<table class="category table table-striped table-bordered table-hover">

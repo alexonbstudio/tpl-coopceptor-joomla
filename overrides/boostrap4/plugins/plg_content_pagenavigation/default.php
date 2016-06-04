@@ -11,10 +11,10 @@ defined('_JEXEC') or die;
 
 $lang = JFactory::getLanguage(); ?>
 
-<ul class="pager pagenav">
+<ul class="pager">
 <?php if ($row->prev) :
 	$direction = $lang->isRtl() ? 'right' : 'left'; ?>
-	<li class="previous">
+	<li>
 		<a href="<?php echo $row->prev; ?>" rel="prev">
 			<?php echo '<span class="icon-chevron-' . $direction . '"></span> ' . $row->prev_label; ?>
 		</a>
@@ -22,7 +22,7 @@ $lang = JFactory::getLanguage(); ?>
 <?php endif; ?>
 <?php if ($row->next) :
 	$direction = $lang->isRtl() ? 'left' : 'right'; ?>
-	<li class="next">
+	<li>
 		<a href="<?php echo $row->next; ?>" rel="next">
 			<?php echo $row->next_label . ' <span class="icon-chevron-' . $direction . '"></span>'; ?>
 		</a>

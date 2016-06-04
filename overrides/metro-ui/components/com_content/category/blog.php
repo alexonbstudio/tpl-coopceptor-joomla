@@ -13,7 +13,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 
 JHtml::_('behavior.caption');
 ?>
-<div class="blog<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
+<div class="<?php echo $this->pageclass_sfx; ?>" itemscope itemtype="https://schema.org/Blog">
 	<?php if ($this->params->get('show_page_heading')) : ?>
 		<div class="page-header">
 			<h1> <?php echo $this->escape($this->params->get('page_heading')); ?> </h1>
@@ -76,7 +76,7 @@ JHtml::_('behavior.caption');
 			<?php $rowcount = ((int) $key % (int) $this->columns) + 1; ?>
 			<?php if ($rowcount == 1) : ?>
 				<?php $row = $counter / $this->columns; ?>
-				<div class="items-row cols-<?php echo (int) $this->columns; ?> <?php echo 'row-' . $row; ?> row-fluid clearfix">
+				<div class="items-row cols-<?php echo (int) $this->columns; ?> <?php echo 'row-' . $row; ?> row clearfix">
 			<?php endif; ?>
 			<div class="span<?php echo round((12 / $this->columns)); ?>">
 				<div class="item column-<?php echo $rowcount; ?><?php echo $item->state == 0 ? ' system-unpublished' : null; ?>"

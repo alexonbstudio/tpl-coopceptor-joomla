@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 require_once JPATH_ROOT . '/components/com_banners/helpers/banner.php';
 $baseurl = JUri::base();
 ?>
-<div class="bannergroup<?php echo $moduleclass_sfx ?>">
+<div class="<?php echo $moduleclass_sfx ?>">
 <?php if ($headerText) : ?>
 	<?php echo $headerText; ?>
 <?php endif; ?>
@@ -102,13 +102,10 @@ $baseurl = JUri::base();
 				</object>
 			<?php endif;?>
 		<?php endif;?>
-		<div class="clr"></div>
+		<div class="clearfix "></div>
 	</div>
 <?php endforeach; ?>
 
 <?php if ($footerText) : ?>
-	<div class="bannerfooter">
-		<?php echo $footerText; ?>
-	</div>
-<?php endif; ?>
+	<small><?php echo $footerText; ?></small><?php endif; ?>
 </div>

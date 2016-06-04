@@ -13,7 +13,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 JHtml::_('formbehavior.chosen', 'select');
 JHtml::_('behavior.caption');
 ?>
-<div class="archive<?php echo $this->pageclass_sfx;?>">
+<div class="<?php echo $this->pageclass_sfx;?>">
 <?php if ($this->params->get('show_page_heading')) : ?>
 <div class="page-header">
 <h1>
@@ -25,7 +25,7 @@ JHtml::_('behavior.caption');
 	<fieldset class="filters">
 	<div class="filter-search">
 		<?php if ($this->params->get('filter_field') != 'hide') : ?>
-		<label class="filter-search-lbl element-invisible" for="filter-search"><?php echo JText::_('COM_CONTENT_TITLE_FILTER_LABEL') . '&#160;'; ?></label>
+		<label class="filter-search-lbl invisible" for="filter-search"><?php echo JText::_('COM_CONTENT_TITLE_FILTER_LABEL') . '&#160;'; ?></label>
 		<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->filter); ?>" class="inputbox span2" onchange="document.getElementById('adminForm').submit();" placeholder="<?php echo JText::_('COM_CONTENT_TITLE_FILTER_LABEL'); ?>" />
 		<?php endif; ?>
 
@@ -39,7 +39,7 @@ JHtml::_('behavior.caption');
 		<input type="hidden" name="limitstart" value="0" />
 	</div>
 	<br />
-	</fieldset>
+	
 
 	<?php echo $this->loadTemplate('items'); ?>
 </form>

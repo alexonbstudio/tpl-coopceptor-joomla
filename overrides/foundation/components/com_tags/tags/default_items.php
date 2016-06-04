@@ -46,7 +46,7 @@ $n = count($this->items);
 		<fieldset class="filters btn-toolbar">
 			<?php if ($this->params->get('filter_field')) : ?>
 				<div class="btn-group">
-					<label class="filter-search-lbl element-invisible" for="filter-search">
+					<label class="filter-search-lbl invisible" for="filter-search">
 						<?php echo JText::_('COM_TAGS_TITLE_FILTER_LABEL') . '&#160;'; ?>
 					</label>
 					<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_TAGS_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_TAGS_TITLE_FILTER_LABEL'); ?>" />
@@ -54,7 +54,7 @@ $n = count($this->items);
 			<?php endif; ?>
 			<?php if ($this->params->get('show_pagination_limit')) : ?>
 				<div class="btn-group pull-right">
-					<label for="limit" class="element-invisible">
+					<label for="limit" class="invisible">
 						<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 					</label>
 					<?php echo $this->pagination->getLimitBox(); ?>
@@ -94,7 +94,7 @@ $n = count($this->items);
 						<?php if ($images->image_intro_caption) : ?>
 							<?php echo 'class="caption"' . ' title="' . htmlspecialchars($images->image_intro_caption) . '"'; ?>
 						<?php endif; ?>
-						src="<?php echo $images->image_intro; ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>"/>
+						src="<?php echo $images->image_intro; ?>" alt="<?php echo htmlspecialchars($images->image_fulltext_alt); ?>">
 				</div>
 			<?php endif; ?>
 			</span>

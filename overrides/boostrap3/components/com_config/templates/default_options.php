@@ -15,33 +15,19 @@ JHtml::_('formbehavior.chosen', 'select');
 ?>
 <?php
 
-	$fieldSets = $this->form->getFieldsets('params');
-?>
+$fieldSets = $this->form->getFieldsets('params');
+echo '<label>'.JText::_('COM_CONFIG_TEMPLATE_SETTINGS').'</label>'; 
 
-<legend><?php echo JText::_('COM_CONFIG_TEMPLATE_SETTINGS'); ?></legend>
-
-<?php
-
-	// Search for com_config field set
-	if (!empty($fieldSets['com_config'])):?>
-
-	<fieldset class="form-horizontal">
-		<?php echo $this->form->renderFieldset('com_config'); ?>
-	</fieldset>
-
-<?php else:
-
+if (!empty($fieldSets['com_config'])):
+		echo $this->form->renderFieldset('com_config');
+else:
 	// Fall-back to display all in params
 	foreach ($fieldSets as $name => $fieldSet) :
-	$label = !empty($fieldSet->label) ? $fieldSet->label : 'COM_CONFIG_' . $name . '_FIELDSET_LABEL';
+		$label = !empty($fieldSet->label) ? $fieldSet->label : 'COM_CONFIG_' . $name . '_FIELDSET_LABEL';
 
-	if (isset($fieldSet->description) && trim($fieldSet->description)) :
-		echo '<p class="tip">' . $this->escape(JText::_($fieldSet->description)) . '</p>';
-	endif;
-	?>
-
-<fieldset class="form-horizontal">
-	<?php echo $this->form->renderFieldset($name); ?>
-</fieldset>
-	<?php endforeach;
-	endif;
+		if (isset($fieldSet->description) && trim($fieldSet->description)) :
+			echo '<p>' . $this->escape(JText::_($fieldSet->description)) . '</p>';
+		endif;
+		echo $this->form->renderFieldset($name); 
+	endforeach;
+endif;

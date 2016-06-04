@@ -10,9 +10,9 @@
 defined('_JEXEC') or die;
 
 // Including fallback code for the placeholder attribute in the search field.
-JHtml::_('jquery.framework');
-JHtml::_('script', 'system/html5fallback.js', false, true);
-
+#JHtml::_('jquery.framework');
+#JHtml::_('script', 'system/html5fallback.js', false, true);
+/**
 if ($width)
 {
 	$moduleclass_sfx .= ' ' . 'mod_search' . $module->id;
@@ -24,12 +24,13 @@ else
 {
 	$width = '';
 }
+**/
 ?>
-<div class="search<?php echo $moduleclass_sfx ?>">
+<div class="<?php echo $moduleclass_sfx ?>">
 	<form action="<?php echo JRoute::_('index.php');?>" method="post" class="form-inline">
 		<?php
-			$output = '<label for="mod-search-searchword" class="element-invisible">' . $label . '</label> ';
-			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"' . $width;
+			$output = '<label for="mod-search-searchword" class="invisible">' . $label . '</label> ';
+			$output .= '<input name="searchword" id="mod-search-searchword" maxlength="' . $maxlength . '"  class="inputbox search-query" type="search"';
 			$output .= ' placeholder="' . $text . '" />';
 
 			if ($button) :

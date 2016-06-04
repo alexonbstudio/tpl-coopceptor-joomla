@@ -24,19 +24,19 @@ $listDirn  = $this->escape($this->state->get('list.direction'));
 	<fieldset class="filters btn-toolbar">
 		<?php if (($this->params->get('filter_field') != 'hide') || ($this->params->get('filter_field') != '0')) :?>
 			<div class="btn-group">
-				<label class="filter-search-lbl element-invisible" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_NEWSFEEDS_FILTER_LABEL') . '&#160;'; ?></label>
+				<label class="filter-search-lbl invisible" for="filter-search"><span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span><?php echo JText::_('COM_NEWSFEEDS_FILTER_LABEL') . '&#160;'; ?></label>
 				<input type="text" name="filter-search" id="filter-search" value="<?php echo $this->escape($this->state->get('list.filter')); ?>" class="inputbox" onchange="document.adminForm.submit();" title="<?php echo JText::_('COM_NEWSFEEDS_FILTER_SEARCH_DESC'); ?>" placeholder="<?php echo JText::_('COM_NEWSFEEDS_FILTER_SEARCH_DESC'); ?>" />
 			</div>
 		<?php endif; ?>
 		<?php if ($this->params->get('show_pagination_limit')) : ?>
 			<div class="btn-group pull-right">
-				<label for="limit" class="element-invisible">
+				<label for="limit" class="invisible">
 					<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>
 				</label>
 				<?php echo $this->pagination->getLimitBox(); ?>
 			</div>
 		<?php endif; ?>
-	</fieldset>
+	
 	<?php endif; ?>
 		<ul class="category list-striped list-condensed">
 			<?php foreach ($this->items as $i => $item) : ?>
