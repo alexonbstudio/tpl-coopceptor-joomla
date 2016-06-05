@@ -1,4 +1,6 @@
 # tpl-coopceptor-joomla
+
+[![Join the chat at https://gitter.im/alexonbalangue/tpl-coopceptor-joomla](https://badges.gitter.im/alexonbalangue/tpl-coopceptor-joomla.svg)](https://gitter.im/alexonbalangue/tpl-coopceptor-joomla?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Template created from by http://www.alexonbalangue.me (here only developpment mode) on J3.5/+
 
 
