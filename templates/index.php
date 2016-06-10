@@ -69,24 +69,28 @@ if($task == "edit" || $layout == "form" ){ $fullWidth = 1; } else { $fullWidth =
 if ($this->countModules('sidebar-left') && $this->countModules('sidebar-right')){
 	$boostrap2_sizes = "span6";
 	$boostrap3_sizes = "col-xs-12 col-sm-6 col-md-6 col-lg-6";
+	$boostrap4_sizes = "col-xs-12 col-sm-6 col-md-6 col-lg-6";
 	$amp_sizes = "";
 	$foundation_sizes = "small-12 medium-6 large-6 columns";
 	$metroui_sizes = "cell colspan6";
 } elseif ($this->countModules('sidebar-left') && !$this->countModules('sidebar-right')){
 	$boostrap2_sizes = "span9";
 	$boostrap3_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
+	$boostrap4_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
 	$amp_sizes = "";
 	$foundation_sizes = "small-12 medium-9 large-9 columns";
 	$metroui_sizes = "cell colspan9";
 } elseif (!$this->countModules('sidebar-left') && $this->countModules('sidebar-right')){
 	$boostrap2_sizes = "span9";
 	$boostrap3_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
+	$boostrap4_sizes = "col-xs-12 col-sm-9 col-md-9 col-lg-9";
 	$amp_sizes = "";
 	$foundation_sizes = "small-12 medium-9 large-9 columns";
 	$metroui_sizes = "cell colspan9";
 } else {
 	$boostrap2_sizes = "span12";
 	$boostrap3_sizes = "col-xs-12 col-sm-12 col-md-12 col-lg-12";
+	$boostrap4_sizes = "col-xs-12 col-sm-12 col-md-12 col-lg-12";
 	$amp_sizes = "";
 	$foundation_sizes = "small-12 medium-expand large-expand columns";
 	$metroui_sizes = "cell colspan12";
@@ -346,14 +350,12 @@ if need keeep for you
 			<jdoc:include type="fi-home" />	
 		[/section]
 		[footer]
-			[begins tags="div" class="container" /]  
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="small-12 medium-expand large-expand columns text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
 						Conceptor by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
-				[ends tags="div" /]  
-			[ends tags="div" /]  
+				[ends tags="div" /]   
 		[/footer]
 	<?php break; case 'foundation-component': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
@@ -361,7 +363,6 @@ if need keeep for you
 			<?php echo $logo; ?>
 		[/header]
 			[section]
-				[begins tags="div" class="container" /]  
 					[begins tags="div" class="row" /]
 						<?php if ($this->countModules('sidebar-left')) : ?>
 						[begins tags="div" class="<?php echo $foundation_sizes; ?>" /]
@@ -380,16 +381,13 @@ if need keeep for you
 						<?php endif; ?>
 					[ends tags="div" /] 
 				[ends tags="div" /] 
-			[/section]	
 		[footer]
-			[begins tags="div" class="container" /]  
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="small-12 medium-expand large-expand columns text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
 						Conceptor by [url href="//www.AlexonBalangue.me" target="_top"]www.AlexonBalangue.me[/url] 
 					[ends tags="div" /]  
 				[ends tags="div" /]  
-			[ends tags="div" /]  
 		[/footer]
 	<?php break; case 'metroui-home': ?>
 		[begins tags="body" mdatatype="http://schema.org/WebPage" /]
@@ -401,7 +399,7 @@ if need keeep for you
 			<jdoc:include type="mui-home" />	
 		[/section]
 		[footer]
-			[begins tags="div" class="container" /]  
+			[begins tags="div" class="grid" /]  
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="cell colspan12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
@@ -416,7 +414,7 @@ if need keeep for you
 			<?php echo $logo; ?>
 		[/header]
 			[section]
-				[begins tags="div" class="container" /]  
+				[begins tags="div" class="grid" /]  
 					[begins tags="div" class="row" /]
 						<?php if ($this->countModules('sidebar-left')) : ?>
 						[begins tags="div" class="<?php echo $metroui_sizes; ?>" /]
@@ -437,7 +435,7 @@ if need keeep for you
 				[ends tags="div" /] 
 			[/section]	
 		[footer]
-			[begins tags="div" class="container" /]  
+			[begins tags="div" class="grid" /]  
 				[begins tags="div" class="row" /]  
 					[begins tags="div" class="cell colspan12 text-center" /]  
 						&copy; <?php echo date('Y').' '.$sitename; ?> - 
