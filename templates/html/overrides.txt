@@ -1,1 +1,0 @@
-For take overrides take here https://github.com/alexonbalangue/tpl-coopceptor-joomla/tree/master/overrides/frontend

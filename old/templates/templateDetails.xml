@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="template" client="site" method="upgrade">
+	<name>coopcetor</name>
+	<version>1.1.1</version>
+	<creationDate>June, 3th 2016</creationDate>
+	<author>Alexon Balangue</author>
+	<authorUrl>www.alexonbalangue.me</authorUrl>
+	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
+	<copyright>Copyright (C) 2016 Alexon Balangue. All rights reserved.</copyright>
+	<description>TPL_COOPCEPTOR_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>index.html</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>assets</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>bs2-home</position>
+		<position>bs2-breadcrumb</position>
+		<position>bs2-footer1</position>
+		<position>bs2-footer2</position>
+		<position>bs2-footer3</position>
+		<position>bs2-footer4</position>
+	<!-- Boostrap3 - home -->
+		<position>bs3-home</position>
+		<position>bs3-breadcrumb</position>
+		<position>bs3-footer1</position>
+		<position>bs3-footer2</position>
+		<position>bs3-footer3</position>
+		<position>bs3-footer4</position>
+	<!-- Boostrap4 - home -->
+		<position>bs4-home</position>
+		<position>bs4-breadcrumb</position>
+		<position>bs4-footer1</position>
+		<position>bs4-footer2</position>
+		<position>bs4-footer3</position>
+		<position>bs4-footer4</position>
+	<!-- amp - home -->
+		<position>amp-home</position>
+		<position>amp-breadcrumb</position>
+		<position>amp-footer1</position>
+		<position>amp-footer2</position>
+		<position>amp-footer3</position>
+		<position>amp-footer4</position>
+	<!-- Foundation - home -->
+		<position>fi-home</position>
+		<position>fi-breadcrumb</position>
+		<position>fi-footer1</position>
+		<position>fi-footer2</position>
+		<position>fi-footer3</position>
+		<position>fi-footer4</position>
+	<!-- MetroUI - home -->
+		<position>mui-home</position>
+		<position>mui-breadcrumb</position>
+		<position>mui-footer1</position>
+		<position>mui-footer2</position>
+		<position>mui-footer3</position>
+		<position>mui-footer4</position>
+	<!-- base and advestising -->
+		<position>menu</position>
+		<position>banner-footer</position>
+		<position>banner-mfooter</position>
+		<position>banner-header</position>
+		<position>banner-mheader</position>
+		<position>sidebar-right</position>
+		<position>sidebar-left</position>
+		<position>footer</position>
+		<position>referencer</position>
+		<position>debug</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="Pages-js-default"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default=""
+					label="TPL_COOPCEPTOR_HIDEJSDEFAULT_LABEL"
+					description="TPL_COOPCEPTOR_HIDEJSDEFAULT_DESC">
+						<option value="">Keep default</option>
+						<option value="home">home</option>
+						<option value="component">Component</option>
+				</field>
+				<field name="logoFile" class="" type="media" default=""
+					label="TPL_COOPCEPTOR_LOGO_LABEL"
+					description="TPL_COOPCEPTOR_LOGO_LABEL" />
+				<field name="groups-html"
+					type="list"
+					default="boostrap3-home"
+					label="TPL_COOPCEPTOR_METHODHTML_LABEL"
+					description="TPL_COOPCEPTOR_METHODHTML_DESC">
+						<option value="boostrap2-home">Boostrap V2.3.2 (Home)</option>
+						<option value="boostrap2-component">Boostrap V2.3.2 (Component)</option>
+						<option value="boostrap3-home">Boostrap V3.3.6 (Home)</option>
+						<option value="boostrap3-component">Boostrap V3.3.6 (Component)</option>
+						<option value="boostrap4-home">Boostrap V4.0-alpha (Home)</option>
+						<option value="boostrap4-component">Boostrap V4.0-alpha (Component)</option>
+				</field>
+				<field name="groups-method"
+					type="list"
+					default="custom"
+					label="TPL_COOPCEPTOR_METHODDESIGNER_LABEL"
+					description="TPL_COOPCEPTOR_METHODDESIGNER_DESC">
+						<option value="custom">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_CUSTOM</option>
+						<option value="production">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_PROD</option>
+				</field>
+			</fieldset>
+			<fieldset name="AMP-HTMLviews" label="AMP-HTML views">
+				<field name="ampHTML"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default=""
+					label="AMP-HTML"
+					description="TPL_COOPCEPTOR_AMPHTML_DESC">
+						<option value="amp">JYes</option>
+						<option value="">JNo</option>
+				</field>
+			</fieldset>
+			<fieldset name="Hidding" label="Hidding support">
+				<field name="ampHTMLbeta"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="not yet"
+					description="TPL_COOPCEPTOR_XXXX_DESC">
+						<option value="1">JYes</option>
+						<option value="0">JNo</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=all&amp;format=xml</server>
+		<server type="extension" priority="2" name="template - Coopceptor">http://alexonbalangue.me/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=11</server>
+	</updateservers>
+</extension>
