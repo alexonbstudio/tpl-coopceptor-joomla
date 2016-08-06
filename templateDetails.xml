@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.5" type="template" client="site" method="upgrade">
+	<name>coopcetor</name>
+	<version>1.0</version>
+	<creationDate>April, 5th 2016</creationDate>
+	<author>Alexon Balangue</author>
+	<authorUrl>www.alexonbalangue.me</authorUrl>
+	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
+	<copyright>Copyright (C) 2016 Alexon Balangue. All rights reserved.</copyright>
+	<description>TPL_COOPCEPTOR_XML_DESCRIPTION</description>
+	<files>
+		<filename>component.php</filename>
+		<filename>error.php</filename>
+		<filename>offline.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>assets</folder>
+		<folder>html</folder>
+		<folder>language</folder>
+	</files>
+	<positions>
+		<position>banner</position>
+		<position>footer</position>
+		<position>referencer</position>
+		<position>debug</position>
+	</positions>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_coopceptor.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.tpl_coopceptor.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="Pages-js-default"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default=""
+					label="TPL_COOPCEPTOR_HIDEJSDEFAULT_LABEL"
+					description="TPL_COOPCEPTOR_HIDEJSDEFAULT_DESC">
+						<option value="">Keep default</option>
+						<option value="home">home</option>
+						<option value="component">Component</option>
+				</field>
+				<field name="logoFile" class="" type="media" default=""
+					label="TPL_COOPCEPTOR_LOGO_LABEL"
+					description="TPL_COOPCEPTOR_LOGO_LABEL" />
+				<field name="groups-html"
+					type="list"
+					default="boostrap2"
+					label="TPL_COOPCEPTOR_METHODHTML_LABEL"
+					description="TPL_COOPCEPTOR_METHODHTML_DESC">
+						<option value="boostrap2">Boostrap V2.3.2</option>
+						<option value="boostrap3">Boostrap V3.3.6</option>
+						<option value="amp">AMP</option>
+						<option value="foundation">Foundation</option>
+						<option value="metroui">MetroUI</option>
+				</field>
+				<field name="groups-method"
+					type="list"
+					default="base"
+					label="TPL_COOPCEPTOR_METHODDESIGNER_LABEL"
+					description="TPL_COOPCEPTOR_METHODDESIGNER_DESC">
+						<option value="base">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_BASE</option>
+						<option value="default">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEFAULT</option>
+						<option value="developpment">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_DEV</option>
+						<option value="custom">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_CUSTOM</option>
+						<option value="production">TPL_COOPCEPTOR_METHODDESIGNER_OPTION_PROD</option>
+				</field>
+			</fieldset>
+			<fieldset name="AMP-HTMLviews" label="AMP-HTML views">
+				<field name="ampHTML"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default=""
+					label="AMP-HTML"
+					description="TPL_COOPCEPTOR_AMPHTML_DESC">
+						<option value="amp">JYes</option>
+						<option value="">JNo</option>
+				</field>
+			</fieldset>
+			<fieldset name="Hidding" label="Hidding support">
+				<field name="ampHTMLbeta"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					label="not yet"
+					description="TPL_COOPCEPTOR_XXXX_DESC">
+						<option value="1">JYes</option>
+						<option value="0">JNo</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://www.alexonbalangue.me/update/joomla/general.xml</server>
+		<server type="extension" priority="2" name="template - Coopceptor">https://www.alexonbalangue.me/update/joomla/xml/tpl_conceptor.xml</server>
+	</updateservers>
+</extension>
