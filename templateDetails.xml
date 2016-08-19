@@ -97,7 +97,7 @@
 		</fields>
 	</config>
 	<updateservers>
-		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://www.alexonbalangue.me/update/joomla/general.xml</server>
-		<server type="extension" priority="2" name="template - Coopceptor">https://www.alexonbalangue.me/update/joomla/xml/tpl_conceptor.xml</server>
+		<server type="collection" priority="1" name="Accredited by Alexon Balangue">https://jupdates.alexonbalangue.me/update/joomla/general.xml</server>
+		<server type="extension" priority="2" name="template - Coopceptor">https://jupdates.alexonbalangue.me/update/joomla/xml/tpl_conceptor.xml</server>
 	</updateservers>
 </extension>
