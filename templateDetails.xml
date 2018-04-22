@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="3.6" type="template" client="site" method="upgrade">
+<extension version="4.0" type="template" client="site" method="upgrade">
 	<name>coopcetor</name>
-	<version>1.1</version>
-	<creationDate>September, 15th 2016</creationDate>
+	<version>2.0</version>
+	<creationDate>23 Avril 2018</creationDate>
 	<author>Alexon Balangue</author>
 	<authorUrl>www.alexonbalangue.me</authorUrl>
 	<authorEmail>moi.sites@alexonbalangue.me</authorEmail>
-	<copyright>Copyright (C) 2016 Alexon Balangue. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2018 Alexon Balangue. All rights reserved.</copyright>
 	<description>TPL_COOPCEPTOR_XML_DESCRIPTION</description>
 	<files>
 		<filename>component.php</filename>
