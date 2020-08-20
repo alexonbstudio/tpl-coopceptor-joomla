@@ -1,6 +1,6 @@
 # tpl-coopceptor-joomla
 
 
-Template created from by http://www.alexonbalangue.me (here only developpment mode) on J3.5/+
+you want 100% shortcode template is move on https://github.com/alexonbstudio/tpl-coopceptor-joomla/tree/shortcode-tpl
 
-For overrides template finaly move on https://github.com/alexonbalangue/Joomla-3.6-Overrides
+For overrides template (TMPL) finaly move on https://github.com/alexonbalangue/Joomla-3.6-Overrides
